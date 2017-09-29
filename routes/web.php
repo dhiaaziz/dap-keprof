@@ -14,7 +14,16 @@
 Route::get('/', function () {
     return view('backend.index');
 });
-Route::get('materi','MateriController@indexMateri'); 
-Route::get('addShow', 'MateriController@addShow');
 
-Route::post('addMateri', 'MateriController@addMateri');
+// Materi
+Route::get('/materi','MateriController@indexMateri'); 
+Route::get('/addShow', 'MateriController@addShow');
+Route::post('/addMateri', 'MateriController@addMateri');
+Route::get('/editMateri/{id}', 'MateriController@editMateri');
+Route::post('/editMateri/update', 'MateriController@updateMateri');
+Route::get('/addShow/delete/{id}', 'MateriController@deleteBerita');
+
+// SubMateri
+Route::get('/subMateri', 'SubMateriController@indexSub');
+Route::get('/addShowSub', 'SubMateriController@addShowSub');
+Route::post('/addSubMateri', 'SubMateriController@addSubMateri');

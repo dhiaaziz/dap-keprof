@@ -35,25 +35,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="materi">
+                    <a href="/materi">
                         <i class="material-icons">book</i>
                         <span>Materi</span>
                     </a>
                 </li>
                 <li>
-                    <a href="submateri">
+                    <a href="/subMateri">
                         <i class="material-icons">description</i>
                         <span>Sub Materi</span>
                     </a>
                 </li>
                 <li>
-                    <a href="latihan">
+                    <a href="/latihan">
                         <i class="material-icons">border_color</i>
                         <span>Latihan</span>
                     </a>
                 </li>
                 <li>
-                    <a href="forum">
+                    <a href="/forum">
                         <i class="material-icons">question_answer</i>
                         <span>Forum</span>
                     </a>

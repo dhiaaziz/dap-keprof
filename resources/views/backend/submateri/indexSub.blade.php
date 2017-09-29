@@ -1,13 +1,13 @@
 @extends('backend.layouts.master')
 
 @section('title')
-   Materi
+   Sub Materi
 @endsection
 
 @section('content')
 <section class="content">
    <div class="container-fluid">
-   <a href="addShow" class="btn main-color-bg " role="button" aria-pressed="true"><i class="material-icons">add</i>Add Materi</a>
+   <a href="/addShowSub" class="btn main-color-bg " role="button" aria-pressed="true"><i class="material-icons">add</i>Add SubMateri</a>
         <div class="block-header">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped ">
@@ -15,21 +15,22 @@
                         <thead class="main-color-bg">
                             <th><center>No</center></th>
                             <th><center>Nama Materi</center></th>
-                            <th><center>Isi Materi</center></th>
+                            <th><center>Nama SubMateri</center></th>
+                            <th><center>Isi SubMateri</center></th>
                             <th><center>Gambar Source Code</center></th>
                             <th><center>Kelola</center></th>
                         </thead>
                     </tr>
                     <tr>
                         <tbody>
-                        @foreach ($Materi as $materi)
+                        {{--  @foreach ($Materi as $materi)
                             <tr>
                             <td><center> {{ $loop->iteration }}</center> </td>
-                            <td>{{ $materi->nm_Materi}}</td>
-                            <td>{{ $materi->isi_Materi }}</td>
+                            <td>{{ $Submateri->nm_Materi}}</td>
+                            <td>{{ $Submateri->isi_Materi }}</td>
                             <td>
                                 <center>
-                                    <img src="{{ asset('storage/images/materi/'.$materi->gambar)}}" width="200px" height="140px" />
+                                    <img src="{{ asset('storage/images/Submateri/'.$sub->gambar)}}" width="200px" height="140px" />
                                 </center>
                             </td>
                             <td>
@@ -41,7 +42,7 @@
                             </td>
                         
                             </tr>
-                        @endforeach
+                        @endforeach  --}}
                         </tbody>
                     </tr>
                 </table>

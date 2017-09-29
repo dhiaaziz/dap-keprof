@@ -37,4 +37,40 @@ class MateriController extends Controller
         return back();
         
     }
+
+    public function editMateri($id)
+    {
+        $data = Materi::find($id);
+        //dd($data);
+        return view("backend.materi.editMateri", compact('data'));
+    }
+
+    public function updateMateri(Request $request)
+    {
+        if (!empty($request->file('gambar'))) {
+
+            $gambar = $request->file('gambar');
+            $imgname = preg_replace('/\s+/', '-', $request->nm_Materi).'.'.$gambar->getClientOriginalExtension();
+            $gambar->storeAs('public/images/materi',$imgname);
+            $dbsldr = $imgname;
+        }
+
+        $materi = Materi::find($request->id);
+        if ( $materi ){
+            $materi->nm_Materi = $request->nm_Materi;
+            $materi->isi_Materi = $request ->isi_Materi;
+            $materi->gambar = $dbsldr;
+            $materi->save();
+            
+             $request->session()->flash('alert-success', 'Task was successfull'); 
+
+        }
+        else $request->session()->flash('alert-danger', 'Task failed');
+    }
+
+    public function deleteBerita($id)
+    {
+        $delete = Materi::find($id)->delete();
+        return back();
+    }
 }
