@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 // Materi
-Route::get('/materi','MateriController@indexMateri'); 
+Route::get('/materi','MateriController@indexMateri');
 Route::get('/addShow', 'MateriController@addShow');
 Route::post('/addMateri', 'MateriController@addMateri');
 Route::get('/editMateri/{id}', 'MateriController@editMateri');
@@ -27,3 +27,9 @@ Route::get('/addShow/delete/{id}', 'MateriController@deleteBerita');
 Route::get('/subMateri', 'SubMateriController@indexSub');
 Route::get('/addShowSub', 'SubMateriController@addShowSub');
 Route::post('/addSubMateri', 'SubMateriController@addSubMateri');
+
+//FrontEnd Materi
+Route::group(['prefix' => 'frontend'], function () {
+        Route::get('materi', 'frontend\MateriController@index');
+    });
+Route::get('/fmateri','MateriController@indexMateri');
