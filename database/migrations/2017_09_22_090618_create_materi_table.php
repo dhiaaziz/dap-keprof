@@ -18,6 +18,7 @@ class CreateMateriTable extends Migration
             $table->string('nm_Materi');
             $table->longText('isi_Materi');
             $table->string('gambar');
+            $table->integer('id_bahasa');
             $table->timestamps();
         });
     }

@@ -21,9 +21,12 @@ Route::get('/addShow', 'MateriController@addShow');
 Route::post('/addMateri', 'MateriController@addMateri');
 Route::get('/editMateri/{id}', 'MateriController@editMateri');
 Route::post('/editMateri/update', 'MateriController@updateMateri');
-Route::get('/addShow/delete/{id}', 'MateriController@deleteBerita');
+Route::get('/addShow/delete/{id}', 'MateriController@deleteMateri');
 
 // SubMateri
 Route::get('/subMateri', 'SubMateriController@indexSub');
 Route::get('/addShowSub', 'SubMateriController@addShowSub');
 Route::post('/addSubMateri', 'SubMateriController@addSubMateri');
+Route::get('/editSubMateri/{id}', 'SubMateriController@editSubMateri');
+Route::post('/editSubMateri/update', 'SubMateriController@updateSubMateri');
+Route::get('/addShowSub/delete/{id}', 'SubMateriController@deleteSubMateri');

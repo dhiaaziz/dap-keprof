@@ -8,26 +8,26 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <form role="form" method="POST" action="{{ url('/addSubMateri') }}"  enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{ url('/editSubMateri/update') }}"  enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="">Nama Materi</label>
-                <select name="group" class="form-control" >
+                <select name="group" class="form-control">
                     <option disable>Pilihan Materi</option>
                         @foreach($dataMateri as $materi)
-                    <option value="{{ $materi->id_materi }}" >{{ $materi->nama }}</option>
+                    <option value="{{ $materi->id_materi }}">{{ $materi->nama }}</option>
                          @endforeach
                 </select>   
             </div>
 
             <div class="form-group">
                 <label>Nama SubMateri</label>
-                <input type="text" class="form-control" id="nm_Sub" name="nm_Sub" placeholder="Nama SubMateri" required/>
+                <input type="text" class="form-control" id="nm_Sub" name="nm_Sub" value= "{{$data->nm_Sub}}" required/>
             </div>
             
             <div class="form-group">
                 <label> Isi SubMateri</label>
-                <textarea name="isi_Sub" class="form-control" id="isi_Sub" ></textarea>
+                <textarea name="isi_Sub" class="form-control" id="isi_Sub" value= "{{$data->isi_Sub}}">{{htmlspecialchars($data->isi_Sub) }}</textarea>
             </div>
              <div class="form-group">
                 <label>Gambar Source Code</label>
@@ -37,6 +37,7 @@
             <div >
                <input class="btn main-color-bg btn-lg" type="submit" value="Save">
             </div>
+            <input type="text" value="{{ $data->id }}" class="form-control" name="id" required style="display:none"/>
             </form>
         </div>
     </div>

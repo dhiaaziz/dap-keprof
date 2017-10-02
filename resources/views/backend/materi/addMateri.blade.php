@@ -8,7 +8,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <form role="form" method="POST" action="{{ url('addMateri') }}"  enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{ url('/addMateri') }}"  enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label>Nama Materi</label>
@@ -22,6 +22,15 @@
              <div class="form-group">
                 <label>Gambar Source Code</label>
                 <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+             <div class="form-group">
+                <label for="">Bahasa</label>
+                <select name="id_bahasa" class="form-control">
+                    <option disable>Pilihan Bahasa</option>
+                        @foreach($databahasa as $bahasa)
+                    <option value="{{ $bahasa->id_bahasa }}">{{ $bahasa->bahasa }}</option>
+                         @endforeach
+                </select>   
             </div>
             <hr>
             <div >
