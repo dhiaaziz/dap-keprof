@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('backend.index');
 });
 
+//Home
+
 // Materi
 Route::get('/materi','MateriController@indexMateri');
 Route::get('/addShow', 'MateriController@addShow');
@@ -31,5 +33,6 @@ Route::post('/addSubMateri', 'SubMateriController@addSubMateri');
 //FrontEnd Materi
 Route::group(['prefix' => 'frontend'], function () {
         Route::get('materi', 'frontend\MateriController@index');
+        Route::get('home','frontend\HomeController@index');
     });
 Route::get('/fmateri','MateriController@indexMateri');
