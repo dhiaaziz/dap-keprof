@@ -14,35 +14,37 @@
                     <tr>
                         <thead class="main-color-bg">
                             <th><center>No</center></th>
-                            <th><center>Nama Materi</center></th>
+                            {{--  <th><center>Nama Materi</center></th>  --}}
                             <th><center>Nama SubMateri</center></th>
                             <th><center>Isi SubMateri</center></th>
                             <th><center>Gambar Source Code</center></th>
+                            <th><center>Nama Materi</center></th>
                             <th><center>Kelola</center></th>
                         </thead>
                     </tr>
                     <tr>
                         <tbody>
-                        {{--  @foreach ($Materi as $materi)
+                        @foreach ($data as $submateri)
                             <tr>
                             <td><center> {{ $loop->iteration }}</center> </td>
-                            <td>{{ $Submateri->nm_Materi}}</td>
-                            <td>{{ $Submateri->isi_Materi }}</td>
+                            <td>{{ $submateri->nm_Sub}}</td>
+                            <td>{{ $submateri->isi_Sub }}</td>
                             <td>
                                 <center>
-                                    <img src="{{ asset('storage/images/Submateri/'.$sub->gambar)}}" width="200px" height="140px" />
+                                    <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub)}}" width="200px" height="140px" />
                                 </center>
                             </td>
+                            <td>{{ $submateri->nm_Materi }}</td>
                             <td>
                             <center>
-                                <a class="btn btn-xs default" href="{{url('/editMateri/'.$materi->id)}}">Edit Berita</a>
-                                <a class="btn btn-xs red" href="{{url('/addShow/delete/'.$materi->id)}}" 
+                                <a class="btn btn-xs default" href="{{url('/editSubMateri/'.$submateri->id)}}">Edit Berita</a>
+                                <a class="btn btn-xs red" href="{{url('/addShowSub/delete/'.$submateri->id)}}" 
                                     onclick="return confirm('Anda yakin akan menghapus ini?');">Hapus Berita</a>
                             </center>
                             </td>
                         
                             </tr>
-                        @endforeach  --}}
+                        @endforeach
                         </tbody>
                     </tr>
                 </table>

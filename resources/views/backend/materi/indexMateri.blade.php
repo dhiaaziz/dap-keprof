@@ -17,6 +17,7 @@
                             <th><center>Nama Materi</center></th>
                             <th><center>Isi Materi</center></th>
                             <th><center>Gambar Source Code</center></th>
+                            <th><center>Bahasa Pemrograman</center></th>
                             <th><center>Kelola</center></th>
                         </thead>
                     </tr>
@@ -32,7 +33,8 @@
                                     <img src="{{ asset('storage/images/materi/'.$materi->gambar)}}" width="200px" height="140px" />
                                 </center>
                             </td>
-                            <td>
+                            <td>{{ $materi->bahasa }}</td>
+                           <td>
                             <center>
                                 <a class="btn btn-xs default" href="{{url('/editMateri/'.$materi->id)}}">Edit Berita</a>
                                 <a class="btn btn-xs red" href="{{url('/addShow/delete/'.$materi->id)}}" 
