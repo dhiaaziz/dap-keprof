@@ -14,10 +14,10 @@
                             <a class="nav-link" href="{{ url('frontend/materi') }}">Materi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Forum</a>
+                            <a class="nav-link" href="{{ url('frontend/latihan') }}">Latihan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Latihan</a>
+                            <a class="nav-link" href="#">Forum</a>
                         </li>
                         <!-- <li class="nav-item btn-group">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown 

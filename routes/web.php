@@ -34,5 +34,6 @@ Route::post('/addSubMateri', 'SubMateriController@addSubMateri');
 Route::group(['prefix' => 'frontend'], function () {
         Route::get('materi', 'frontend\MateriController@index');
         Route::get('home','frontend\HomeController@index');
+        Route::get('latihan','frontend\LatihanController@index');
     });
 Route::get('/fmateri','MateriController@indexMateri');

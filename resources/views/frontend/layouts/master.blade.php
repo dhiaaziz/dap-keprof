@@ -17,6 +17,7 @@
     
 
     @yield('content')
+    
     <!--Footer-->
     @include('frontend.layouts.footer')
     <!--/.Footer-->
