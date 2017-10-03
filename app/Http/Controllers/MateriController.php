@@ -11,12 +11,16 @@ class MateriController extends Controller
 {
     public function indexMateri(){
 
-        $Materi = Materi::all();
+        // $Materi = Materi::all();
+        // dd($Materi);
+        $Materi = \DB::select('select m.*, b.id as id_b, b.bahasa from materi m LEFT JOIN bahasa b On m.id_bahasa = b.id ');
         return view("backend.materi.indexMateri", compact('Materi'));
     }
 
     public function addShow(){
-        return view("backend.materi.addMateri");
+        $databahasa = \DB::select('select id as id_bahasa , bahasa  from bahasa');
+        
+        return view("backend.materi.addMateri", compact('databahasa'));
     }
 
     public function addMateri(Request $request){
@@ -29,7 +33,7 @@ class MateriController extends Controller
             $gambar->storeAs('public/images/materi',$imgname);
             $dbsldr = $imgname;
             
-            $added = (new Materi())->add($request->nm_Materi,$request->isi_Materi,$dbsldr);
+            $added = (new Materi())->add($request->nm_Materi,$request->isi_Materi,$request->id_bahasa,$dbsldr);
             $request->session()->flash('alert-success', 'Task was successfull'); 
             
         } else $request->session()->flash('alert-danger', 'Task failed');
@@ -40,9 +44,11 @@ class MateriController extends Controller
 
     public function editMateri($id)
     {
-        $data = Materi::find($id);
-        //dd($data);
-        return view("backend.materi.editMateri", compact('data'));
+        $data = \DB::table('materi')
+        ->where('id',$id)->first();
+        $databahasa = \DB::select('select id as id_bahasa , bahasa  from bahasa');
+        // dd($data);
+        return view("backend.materi.editMateri", compact('data','databahasa'));
     }
 
     public function updateMateri(Request $request)
@@ -60,17 +66,23 @@ class MateriController extends Controller
             $materi->nm_Materi = $request->nm_Materi;
             $materi->isi_Materi = $request ->isi_Materi;
             $materi->gambar = $dbsldr;
+            $materi->id_bahasa = $request->id_bahasa;
             $materi->save();
             
              $request->session()->flash('alert-success', 'Task was successfull'); 
 
         }
         else $request->session()->flash('alert-danger', 'Task failed');
+        $Materi = \DB::select('select m.*, b.id as id_b, b.bahasa from materi m LEFT JOIN bahasa b On m.id_bahasa = b.id ');
+        return view("backend.materi.indexMateri", compact('Materi'));   
     }
 
-    public function deleteBerita($id)
+    public function deleteMateri($id)
     {
-        $delete = Materi::find($id)->delete();
-        return back();
+        $delete = \DB::table('materi')
+        ->where('id',$id)->delete();
+        
+        $Materi = \DB::select('select m.*, b.id as id_b, b.bahasa from materi m LEFT JOIN bahasa b On m.id_bahasa = b.id ');
+        return view("backend.materi.indexMateri", compact('Materi'));
     }
 }

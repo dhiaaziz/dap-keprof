@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubMateriTable extends Migration
+class CreateBahasaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateSubMateriTable extends Migration
      */
     public function up()
     {
-        Schema::create('subMateri', function (Blueprint $table) {
+        
+        Schema::create('bahasa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nm_Sub');
-            $table->longText('isi_Sub');
-            $table->string('gmbr_Sub');
-            $table->integer('id_materi');
-            $table->timestamps();
+            $table->string('bahasa');
+            
         });
+        
     }
 
     /**
@@ -31,7 +30,7 @@ class CreateSubMateriTable extends Migration
     public function down()
     {
         
-        Schema::dropIfExists('subMateri');
+        Schema::dropIfExists('bahasa');
         
     }
 }
