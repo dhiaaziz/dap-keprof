@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 
 @section('title')
-   TEST
+   Add Materi
 @endsection
 
 @section('content')
@@ -17,11 +17,11 @@
             
             <div class="form-group">
                 <label> Isi Materi</label>
-                <textarea name="isi_Materi" class="form-control" id="isi_Materi" rows="3"></textarea>
+                <textarea name="isi_Materi" class="form-control" id="isi_Materi" rows="3" required></textarea>
             </div>
              <div class="form-group">
                 <label>Gambar Source Code</label>
-                <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1" required>
             </div>
              <div class="form-group">
                 <label for="">Bahasa</label>

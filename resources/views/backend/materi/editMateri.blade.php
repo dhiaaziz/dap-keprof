@@ -17,11 +17,11 @@
             
             <div class="form-group">
                 <label> Isi Materi</label>
-                <textarea name="isi_Materi" class="form-control" id="isi_Materi"  value="{{$data->isi_Materi}}">{{htmlspecialchars($data->isi_Materi) }}</textarea>
+                <textarea name="isi_Materi" class="form-control" id="isi_Materi"  value="{{$data->isi_Materi}}" required>{{htmlspecialchars($data->isi_Materi) }}</textarea>
             </div>
              <div class="form-group">
                 <label>Gambar Source Code</label>
-                <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1" >
+                <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1" required >
             </div>
              <div class="form-group">
                 <label for="">Bahasa</label>

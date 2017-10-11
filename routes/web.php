@@ -30,3 +30,11 @@ Route::post('/addSubMateri', 'SubMateriController@addSubMateri');
 Route::get('/editSubMateri/{id}', 'SubMateriController@editSubMateri');
 Route::post('/editSubMateri/update', 'SubMateriController@updateSubMateri');
 Route::get('/addShowSub/delete/{id}', 'SubMateriController@deleteSubMateri');
+
+// Latihan
+Route::get('/latihan', 'LatihanController@indexLatihan');
+Route::get('/addShowLatihan', 'LatihanController@addShowLatihan');
+Route::post('/addLatihan', 'LatihanController@addLatihan');
+Route::get('/editLatihan/{id}', 'LatihanController@editLatihan');
+Route::post('/editLatihan/update', 'LatihanController@updateLatihan');
+Route::get('/addShowLatihan/delete/{id}', 'LatihanController@deleteLatihan');

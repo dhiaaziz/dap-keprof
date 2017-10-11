@@ -1,44 +1,42 @@
 @extends('backend.layouts.master')
 
 @section('title')
-   Materi
+   Latihan
 @endsection
 
 @section('content')
 <section class="content">
    <div class="container-fluid">
-   <a href="/addShow" class="btn main-color-bg " role="button" aria-pressed="true"><i class="material-icons">add</i>Add Materi</a>
+   <a href="/addShowLatihan" class="btn main-color-bg " role="button" aria-pressed="true"><i class="material-icons">add</i>Add Materi</a>
         <div class="block-header">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped ">
                     <tr>
                         <thead class="main-color-bg">
                             <th><center>No</center></th>
-                            <th><center>Nama Materi</center></th>
-                            <th><center>Isi Materi</center></th>
-                            <th><center>Gambar Source Code</center></th>
-                            <th><center>Bahasa Pemrograman</center></th>
+                            <th><center>Nama latihan</center></th>
+                            <th><center>Isi Latihan</center></th>
+                            <th><center>Gambar Kunci Jawaban</center></th>
                             <th><center>Kelola</center></th>
                         </thead>
                     </tr>
                     <tr>
                         <tbody>
-                        @foreach ($Materi as $materi)
+                        @foreach ($Latihan as $latihan)
                             <tr>
                             <td><center> {{ $loop->iteration }}</center> </td>
-                            <td>{{ $materi->nm_Materi}}</td>
-                            <td>{{ $materi->isi_Materi }}</td>
+                            <td>{{ $latihan->nm_latihan}}</td>
+                            <td>{{ $latihan->sl_latihan }}</td>
                             <td>
                                 <center>
-                                    <img src="{{ asset('storage/images/materi/'.$materi->gambar)}}" width="200px" height="140px" />
+                                    <img src="{{ asset('storage/images/latihan/'.$latihan->srcCode)}}" width="200px" height="140px" />
                                 </center>
                             </td>
-                            <td>{{ $materi->bahasa }}</td>
                            <td>
                             <center>
-                                <a class="btn btn-xs default" href="{{url('/editMateri/'.$materi->id)}}">Edit Materi</a>
-                                <a class="btn btn-xs red" href="{{url('/addShow/delete/'.$materi->id)}}" 
-                                    onclick="return confirm('Anda yakin akan menghapus ini?');">Hapus Materi</a>
+                                <a class="btn btn-xs default" href="{{url('/editLatihan/'.$latihan->id)}}">Edit Latihan</a>
+                                <a class="btn btn-xs red" href="{{url('/addShowLatihan/delete/'.$latihan->id)}}" 
+                                    onclick="return confirm('Anda yakin akan menghapus ini?');">Hapus Latihan</a>
                             </center>
                             </td>
                         
