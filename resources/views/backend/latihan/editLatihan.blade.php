@@ -1,0 +1,44 @@
+@extends('backend.layouts.master')
+
+@section('title')
+   Add Latihan
+@endsection
+
+@section('content')
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <form role="form" method="POST" action="{{ url('/editLatihan/update') }}"  enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label>Nama latihan</label>
+                <input type="text" class="form-control" id="nm_latihan" name="nm_latihan" placeholder="Nama latihan"  value="{{$data->nm_latihan}}" required/>
+            </div>
+            
+            <div class="form-group">
+                <label> Soal Latihan</label>
+                <textarea name="sl_latihan" class="form-control" id="sl_latihan"  value="{{$data->sl_latihan}}" required>{{htmlspecialchars($data->sl_latihan) }}</textarea>
+            </div>
+             <div class="form-group">
+                <label>Gambar Source Code</label>
+                <input type="file" name="srcCode" class="form-control-file" id="exampleFormControlFile1" required>
+            </div>
+            <hr>
+            <div >
+               <input class="btn main-color-bg btn-lg" type="submit" value="Save">
+            </div>
+            <div>
+                <input type="text" value="{{$data->id}}" class="form-control" name="id" required style="display:none"/>
+            </div>
+            </form>
+        </div>
+    </div>
+</section>
+@endsection
+
+@section('more-script')
+    <script src="https://cdn.ckeditor.com/4.7.1/basic/ckeditor.js" type="text/javascript"></script>
+    <script>
+        CKEDITOR.replace( 'sl_latihan' );
+    </script>
+@endsection

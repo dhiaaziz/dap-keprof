@@ -27,11 +27,11 @@
             
             <div class="form-group">
                 <label> Isi SubMateri</label>
-                <textarea name="isi_Sub" class="form-control" id="isi_Sub" value= "{{$data->isi_Sub}}">{{htmlspecialchars($data->isi_Sub) }}</textarea>
+                <textarea name="isi_Sub" class="form-control" id="isi_Sub" value= "{{$data->isi_Sub}}" required>{{htmlspecialchars($data->isi_Sub) }}</textarea>
             </div>
              <div class="form-group">
                 <label>Gambar Source Code</label>
-                <input type="file" name="gmbr_Sub" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" name="gmbr_Sub" class="form-control-file" id="exampleFormControlFile1" required>
             </div>
             <hr>
             <div >

@@ -40,3 +40,12 @@ Route::group(['prefix' => 'frontend'], function () {
         Route::get('home','frontend\HomeController@index');
         Route::get('latihan','frontend\LatihanController@index');
     });
+
+// Latihan
+Route::get('/latihan', 'LatihanController@indexLatihan');
+Route::get('/addShowLatihan', 'LatihanController@addShowLatihan');
+Route::post('/addLatihan', 'LatihanController@addLatihan');
+Route::get('/editLatihan/{id}', 'LatihanController@editLatihan');
+Route::post('/editLatihan/update', 'LatihanController@updateLatihan');
+Route::get('/addShowLatihan/delete/{id}', 'LatihanController@deleteLatihan');
+

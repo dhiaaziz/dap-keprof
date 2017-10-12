@@ -37,9 +37,9 @@
                             <td>{{ $submateri->nm_Materi }}</td>
                             <td>
                             <center>
-                                <a class="btn btn-xs default" href="{{url('/editSubMateri/'.$submateri->id)}}">Edit Berita</a>
+                                <a class="btn btn-xs default" href="{{url('/editSubMateri/'.$submateri->id)}}">Edit Sub Materi</a>
                                 <a class="btn btn-xs red" href="{{url('/addShowSub/delete/'.$submateri->id)}}" 
-                                    onclick="return confirm('Anda yakin akan menghapus ini?');">Hapus Berita</a>
+                                    onclick="return confirm('Anda yakin akan menghapus ini?');">Hapus Sub Materi</a>
                             </center>
                             </td>
                         
