@@ -16,6 +16,7 @@ class CreateLatihanTable extends Migration
         
         Schema::create('latihan', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('gambar');
             $table->string('nm_latihan');
             $table->longText('sl_latihan');
             $table->string('srcCode');

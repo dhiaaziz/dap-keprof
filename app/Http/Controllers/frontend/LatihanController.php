@@ -4,11 +4,13 @@ namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Latihan;
 
 class LatihanController extends Controller
 {
     //
     public function index(){
-        // $Materi = Materi::all();
-        return view("frontend.latihan.index");}
+        $Latihan = Latihan::all();
+        return view("frontend.Latihan.index",compact('Latihan'));
+    }
 }
