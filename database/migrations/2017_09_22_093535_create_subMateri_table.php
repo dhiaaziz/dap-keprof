@@ -13,7 +13,7 @@ class CreateSubMateriTable extends Migration
      */
     public function up()
     {
-        Schema::create('subMateri', function (Blueprint $table) {
+        Schema::create('submateri', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nm_Sub');
             $table->longText('isi_Sub');
@@ -31,7 +31,7 @@ class CreateSubMateriTable extends Migration
     public function down()
     {
         
-        Schema::dropIfExists('subMateri');
+        Schema::dropIfExists('submateri');
         
     }
 }
