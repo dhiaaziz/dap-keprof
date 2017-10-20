@@ -8,48 +8,38 @@ Latihan
  <!-- Template styles -->
     <style rel="stylesheet">
         /* TEMPLATE STYLES */
-        
+
         main {
             margin-top: 3rem;
+            background-color: #fafafa
         }
-        
-        .lead {
-            text-align: justify;
+
+        main .card {
+            margin-bottom: 2rem;
         }
-        
-        @media only screen and (max-width: 768px) {
-            .post-title {
-                margin-top: 1rem;
-            }
-        }
-        
+
         @media only screen and (max-width: 768px) {
             .read-more {
                 text-align: center;
             }
         }
-        
-        .extra-margin {
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        
+
         .navbar {
-            background-color: #555658;
+            background-color: #1C2331;
         }
 
-        .navbar .btn-group .dropdown-menu a:hover {
+        footer.page-footer {
+            background-color: #1C2331;
+            margin-top: 2rem;
+        }
+         .navbar .btn-group .dropdown-menu a:hover {
             color: #000 !important;
         }
 
         .navbar .btn-group .dropdown-menu a:active {
             color: #fff !important;
         }
-        
-        footer.page-footer {
-            background-color: #555658;
-            margin-top: 2rem;
-        }
+
     </style>
 @endsection
 
@@ -135,5 +125,10 @@ Latihan
 @section('more-script')
    <script>
     new WOW().init();
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#nav-latihan").addClass("active");
+        })
     </script>
 @endsection

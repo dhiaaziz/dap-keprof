@@ -131,4 +131,10 @@ Materi
     <script>
     new WOW().init();
     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#nav-materi").addClass("active");
+        })
+    </script>
 @endsection

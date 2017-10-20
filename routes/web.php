@@ -39,7 +39,7 @@ Route::group(['prefix' => 'frontend'], function () {
         Route::get('materi', 'frontend\MateriController@index');
         Route::get('home','frontend\HomeController@index');
         Route::get('latihan','frontend\LatihanController@index');
-        Route::get('forum','frontend\LatihanController@index');
+        Route::get('forum','frontend\ForumController@index');
     });
 
 // Latihan
