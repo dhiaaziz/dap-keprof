@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading" style="text-align: center">Selamat anda sudah menjadi Member</div>
 
-                <div class="panel-body">
+                <div class="panel-body" style="text-align: center">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    You are logged in!
+                    Silahkan Menikmati Akses Penuh!
                 </div>
             </div>
         </div>
