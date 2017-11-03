@@ -42,7 +42,10 @@ Route::group(['prefix' => 'frontend'], function () {
         Route::get('home','frontend\HomeController@index');
         Route::get('latihan','frontend\LatihanController@index');
         Route::get('forum','frontend\ForumController@index');
+        Route::get('submateri', 'frontend\SubMateriController@index');
+
     });
+//Frontend submateri
 
 // Latihan
 Route::get('/latihan', 'LatihanController@indexLatihan');
