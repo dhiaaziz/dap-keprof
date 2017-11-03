@@ -80,8 +80,8 @@ Materi
                             <!--Title-->
                             <h4 class="card-title">{{ $materi->nm_Materi }}</h4>
                             <!--Text-->
-                            {{$materi->isi_Materi}}
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            {!! $materi->isi_Materi !!}
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                             <a href="#" class="btn btn-primary">Pilih</a>
                         </div>
 
@@ -135,6 +135,11 @@ Materi
     <script type="text/javascript">
         $(document).ready(function(){
             $("#nav-materi").addClass("active");
+            $(".card-body > p").addClass("card-text");
         })
+    </script>
+
+    <script type="text/javascript">
+
     </script>
 @endsection
