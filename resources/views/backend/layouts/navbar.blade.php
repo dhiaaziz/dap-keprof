@@ -35,6 +35,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/bahasa">
+                        <i class="material-icons">spellcheck</i>
+                        <span>Bahasa</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/materi">
                         <i class="material-icons">book</i>
                         <span>Materi</span>
@@ -57,7 +63,7 @@
                         <i class="material-icons">question_answer</i>
                         <span>Forum</span>
                     </a>
-                </li>   
+                </li>
             </ul>
         </div>
         <!-- #Menu -->
@@ -74,7 +80,7 @@
     </aside>
     <!-- #END# Left Sidebar -->
     <!-- Right Sidebar -->
-    
-            
+
+
     <!-- #END# Right Sidebar -->
 </section>

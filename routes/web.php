@@ -33,7 +33,9 @@ Route::get('/editSubMateri/{id}', 'SubMateriController@editSubMateri');
 Route::post('/editSubMateri/update', 'SubMateriController@updateSubMateri');
 Route::get('/addShowSub/delete/{id}', 'SubMateriController@deleteSubMateri');
 
-
+ //Bahasa
+Route::get('/bahasa', 'BahasaController@index');
+Route::get('/addBahasa', 'BahasaController@addBahasaShow');
 //FrontEnd Materi
 Route::group(['prefix' => 'frontend'], function () {
         Route::get('materi', 'frontend\MateriController@index');

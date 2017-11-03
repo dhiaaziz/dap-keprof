@@ -33,10 +33,10 @@ class SubMateriController extends Controller
             $dbsldr = $imgnm;
 
             $added = (new SubMateri())->addedSub($request->nm_Sub,$request->isi_Sub,$dbsldr,$request->group);
-            $request->session()->flash('alert-success', 'Task was successfull'); 
-        
+            $request->session()->flash('alert-success', 'Task was successfull');
+
         }else $request->session()->flash('alert-danger', 'Task failed');
-        
+
          return back();
     }
 
@@ -65,8 +65,8 @@ class SubMateriController extends Controller
             $Submateri->gmbr_Sub = $dbsldr;
             $Submateri->id_materi = $request->group;
             $Submateri->save();
-            
-             $request->session()->flash('alert-success', 'Task was successfull'); 
+
+             $request->session()->flash('alert-success', 'Task was successfull');
 
         }
         else $request->session()->flash('alert-danger', 'Task failed');
@@ -79,10 +79,10 @@ class SubMateriController extends Controller
     {
         $delete = \DB::table('submateri')
         ->where('id',$id)->delete();
-        
+
         $data = \DB::select('select s.*, m.nm_Materi from subMateri s LEFT JOIN materi m ON s.id_materi = m.id');
         // dd($data);
         return view('backend.submateri.indexSub', compact('data'));
     }
-    
+
 }

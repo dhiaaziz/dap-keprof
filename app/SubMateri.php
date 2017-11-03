@@ -15,8 +15,8 @@ class SubMateri extends Model
     public function addedSub($nm_Sub,$isi_Sub,$gmbrSub,$id_materi){
         $add = \DB::table('submateri')
         ->insert(['nm_Sub'=>$nm_Sub, 'isi_Sub'=> $isi_Sub, 'gmbr_Sub'=> $gmbrSub, 'id_materi'=> $id_materi]);
-    
+
         return $add;
-        
+
     }
 }
