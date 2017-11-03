@@ -37,7 +37,7 @@ class SubMateriController extends Controller
         
         }else $request->session()->flash('alert-danger', 'Task failed');
         
-         return back();
+         return redirect('/subMateri');;
     }
 
     public function editSubMateri($id){

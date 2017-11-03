@@ -39,6 +39,20 @@ Materi
         .navbar .btn-group .dropdown-menu a:active {
             color: #fff !important;
         }
+        .test-image{
+            padding: 26px;
+            height: 350px;
+            vertical-align: middle;
+            text-align: center;
+            /*max-height: 20px;*/
+            display: inline-block; 
+            /*border: 1px solid blue*/
+        }
+        .test-image img{
+            /*max-height: 350px;*/
+            height: 100%;
+            margin: 0px auto;
+        }
 
     </style>
 @endsection
@@ -71,9 +85,10 @@ Materi
 
                     <!--Card-->
                     <div class="card">
-
-                        <!--Card image-->
-                        <img class="img-fluid" src="{{ asset('storage/images/materi/'.$materi->gambar) }}" alt="{{ $materi->gambar}}">
+                        <div class="test-image">
+                            <!--Card image-->
+                            <img class="img-fluid" src="{{ asset('storage/images/materi/'.$materi->gambar) }}" alt="{{ $materi->gambar}}">
+                        </div>
 
                         <!--Card content-->
                         <div class="card-body">
@@ -82,7 +97,7 @@ Materi
                             <!--Text-->
                             {!! $materi->isi_Materi !!}
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                            <a href="#" class="btn btn-primary">Pilih</a>
+                            <a href="/frontend/submateri" class="btn btn-primary">Pilih</a>
                         </div>
 
                     </div>

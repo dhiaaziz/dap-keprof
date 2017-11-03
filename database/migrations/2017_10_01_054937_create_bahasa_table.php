@@ -17,6 +17,7 @@ class CreateBahasaTable extends Migration
         Schema::create('bahasa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('bahasa');
+            $table->string('gambar');
             
         });
         

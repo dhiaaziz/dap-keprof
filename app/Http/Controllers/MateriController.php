@@ -43,7 +43,7 @@ class MateriController extends Controller
             
         } else $request->session()->flash('alert-danger', 'Task failed');
        
-        return back();
+        return redirect('/materi');
         
     }
 

@@ -20,13 +20,18 @@ class LatihanController extends Controller
 
     public function addLatihan(Request $request){
         if (!empty ($request->nm_latihan)) {
-
+            //sorCOde
             $gambar = $request->file('srcCode');
-            $imgname = preg_replace('/\s+/', '-', $request->nm_latihan).'.'.$gambar->getClientOriginalExtension();
+            $imgname = preg_replace('/\s+/', '-',$request->nm_latihan).'.'.$gambar->getClientOriginalExtension();
             $gambar->storeAs('public/images/latihan',$imgname);
             $dbsldr = $imgname;
-    
-            $add = (new Latihan())->addedlatihan($request->nm_latihan,$request->sl_latihan,$dbsldr);
+            //gambar
+            $gambar2 = $request->file('gambar');
+            $imgname2 = preg_replace('/\s+/', '-','gmb_'. $request->nm_latihan).'.'.$gambar2->getClientOriginalExtension();
+            $gambar2->storeAs('public/images/latihan',$imgname2);
+            $dbsldr2 = $imgname2;
+
+            $add = (new Latihan())->addedlatihan($request->nm_latihan,$request->sl_latihan,$dbsldr,$dbsldr2);
             $request->session()->flash('alert-succes', 'Task was succesfull');
     
         } else $request->session()->flash('alert-danger', 'Task failed');
