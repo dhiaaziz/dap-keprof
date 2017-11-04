@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Latihan;
 
 class LatihanController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function indexLatihan()
     {
         $Latihan = Latihan::all();

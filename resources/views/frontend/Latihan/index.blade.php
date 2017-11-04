@@ -78,7 +78,7 @@ Latihan
                 <!--Post excerpt-->
                 <div class="col-lg-5">
                     <a href="#!"><h2 class="post-title font-bold">{{$lat->nm_latihan}}</h2></a>
-                    <p class="my-4"> {{$lat->sl_latihan}}</p>
+                    <p class="my-4"> {!!$lat->sl_latihan!!}</p>
                         <a href="#!" class="btn btn-primary">Mulai Latihan</a>
                     </div>
                 </div>
