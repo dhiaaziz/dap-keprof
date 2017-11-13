@@ -20,6 +20,7 @@ class CreateLatihanTable extends Migration
             $table->string('nm_latihan');
             $table->longText('sl_latihan');
             $table->string('srcCode');
+            $table->integer('id_bahasa');
             $table->timestamps();
         });
         

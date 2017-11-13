@@ -45,4 +45,10 @@ class LoginController extends Controller
         $request->session()->regenerate();
         return redirect('frontend/home');
     }
+
+    protected function credentials(Request $request)
+    {
+        // return $request->only($this->username(), 'password');
+        return ['email'=>$request->{$this->username()},'password'=>$request->password,'status'=>'1'];
+    }
 }

@@ -42,6 +42,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/user">
+                        <i class="material-icons">book</i>
+                        <span>User</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/materi">
                         <i class="material-icons">book</i>
                         <span>Materi</span>
@@ -65,6 +71,12 @@
                         <span>Forum</span>
                     </a>
                 </li>   
+                <li>
+                    <a href="/bahasa">
+                        <i class="material-icons">question_answer</i>
+                        <span>Bahasa</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- #Menu -->

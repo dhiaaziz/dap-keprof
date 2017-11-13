@@ -13,10 +13,10 @@ class Latihan extends Model
         'nm_latihan', 'sl_latihan', 'srcCode',
     ];
 
-    public function addedlatihan($nm_latihan,$sl_latihan,$srcCode,$gambar){
+    public function addedlatihan($nm_latihan,$sl_latihan,$id_bahasa,$srcCode,$gambar){
         
         $added = \DB::table('latihan')
-        ->insert(['nm_latihan'=>$nm_latihan, 'sl_latihan'=> $sl_latihan, 'srcCode'=> $srcCode,'gambar'=> $gambar ]);
+        ->insert(['nm_latihan'=>$nm_latihan, 'sl_latihan'=> $sl_latihan,'id_bahasa'=>$id_bahasa, 'srcCode'=> $srcCode,'gambar'=> $gambar ]);
         
     }
 }

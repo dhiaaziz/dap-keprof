@@ -1,11 +1,11 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-Forum
+Verifikasi
 @endsection
 
 @section('more-style')
-<!-- Template styles -->
+ <!-- Template styles -->
     <style rel="stylesheet">
         /* TEMPLATE STYLES */
 
@@ -48,17 +48,42 @@ Forum
 @endsection
 
 @section('content')
-coba coba
+<main>
+        <!--Main layout-->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive">Verifikasi Akun</h1>
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+               <div class="card" style="width: 22rem; margin : auto;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Please check your email for verification account</p>
+                        </div>
+                </div>
+                   
+                        
+                           
+                            
+                        
+                   
+                    
+                
+        </div>
+        <!--/.Main layout-->
+    </main>
 @endsection
 
 @section('more-script')
    <script>
     new WOW().init();
     </script>
-
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#nav-forum").addClass("active");
+            $("#nav-latihan").addClass("active");
         })
     </script>
 @endsection

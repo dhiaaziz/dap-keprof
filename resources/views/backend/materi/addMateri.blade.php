@@ -26,7 +26,7 @@
              <div class="form-group">
                 <label for="">Bahasa</label>
                 <select name="id_bahasa" class="form-control">
-                    <option disable>Pilihan Bahasa</option>
+                    <option disabled>Pilihan Bahasa</option>
                         @foreach($databahasa as $bahasa)
                     <option value="{{ $bahasa->id_bahasa }}">{{ $bahasa->bahasa }}</option>
                          @endforeach

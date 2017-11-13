@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label for="">Nama Materi</label>
                 <select name="group" class="form-control">
-                    <option disable>Pilihan Materi</option>
+                    <option disabled>Pilihan Materi</option>
                         @foreach($dataMateri as $materi)
                     <option value="{{ $materi->id_materi }}">{{ $materi->nama }}</option>
                          @endforeach
