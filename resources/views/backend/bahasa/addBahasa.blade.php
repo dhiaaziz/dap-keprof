@@ -8,7 +8,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <form role="form" method="POST" action="{{ url('/') }}"  enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{ url('/addBahasa') }}"  enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label>Nama Bahasa</label>

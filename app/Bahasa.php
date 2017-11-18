@@ -12,7 +12,7 @@ class Bahasa extends Model
     protected $fillable = [
         'nm_Materi', 'isi_Materi', 'gambar','id_bahasa'
     ];
-    public function add($bahasa,$gambar){
+    public function addBahasa($bahasa,$gambar){
         $add = \DB::table('bahasa')
                 ->insert(['bahasa'=> $bahasa , 'gambar' => $gambar]);
 

@@ -24,7 +24,7 @@ class MateriController extends Controller
 
     public function addShow(){
         $databahasa = \DB::select('select id as id_bahasa , bahasa  from bahasa');
-        
+
         return view("backend.materi.addMateri", compact('databahasa'));
     }
 
@@ -36,15 +36,16 @@ class MateriController extends Controller
             // $thumbnail = \Image::make($gamabr->getRealPath())->resize(200, 200);
             // $thumbnail->save($sldpath.'/'.$imgname, 80);
             $gambar->storeAs('public/images/materi',$imgname);
+            dd($request);
             $dbsldr = $imgname;
-            
+
             $added = (new Materi())->add($request->nm_Materi,$request->isi_Materi,$request->id_bahasa,$dbsldr);
-            $request->session()->flash('alert-success', 'Task was successfull'); 
-            
+            $request->session()->flash('alert-success', 'Task was successfull');
+
         } else $request->session()->flash('alert-danger', 'Task failed');
-       
+
         return redirect('/materi');
-        
+
     }
 
     public function editMateri($id)
@@ -73,20 +74,20 @@ class MateriController extends Controller
             $materi->gambar = $dbsldr;
             $materi->id_bahasa = $request->id_bahasa;
             $materi->save();
-            
-             $request->session()->flash('alert-success', 'Task was successfull'); 
+
+             $request->session()->flash('alert-success', 'Task was successfull');
 
         }
         else $request->session()->flash('alert-danger', 'Task failed');
         $Materi = \DB::select('select m.*, b.id as id_b, b.bahasa from materi m LEFT JOIN bahasa b On m.id_bahasa = b.id ');
-        return view("backend.materi.indexMateri", compact('Materi'));   
+        return view("backend.materi.indexMateri", compact('Materi'));
     }
 
     public function deleteMateri($id)
     {
         $delete = \DB::table('materi')
         ->where('id',$id)->delete();
-        
+
         $Materi = \DB::select('select m.*, b.id as id_b, b.bahasa from materi m LEFT JOIN bahasa b On m.id_bahasa = b.id ');
         return view("backend.materi.indexMateri", compact('Materi'));
     }

@@ -36,6 +36,7 @@ Route::get('/addShowSub/delete/{id}', 'SubMateriController@deleteSubMateri');
  //Bahasa
 Route::get('/bahasa', 'BahasaController@index');
 Route::get('/addBahasa', 'BahasaController@addBahasaShow');
+Route::post('/addBahasa', 'BahasaController@addBahasa');
 //FrontEnd Materi
 Route::group(['prefix' => 'frontend'], function () {
         Route::get('materi', 'frontend\MateriController@index');
@@ -73,5 +74,3 @@ Route::POST('admin-password/email', 'Admin\ForgotPasswordController@sendResetLin
 Route::GET('admin-password/reset', 'Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 Route::POST('admin-password/reset', 'Admin\ResetPasswordController@reset');
 Route::GET('admin-password/reset/{token}', 'Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
-
-

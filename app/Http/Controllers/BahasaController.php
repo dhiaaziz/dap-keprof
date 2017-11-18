@@ -26,4 +26,22 @@ class BahasaController extends Controller
         return view('backend.bahasa.addBahasa');
     }
 
+    public function addBahasa(Request $request)
+    {
+      if (!empty ($request->bahasa)){
+          $gmbr = $request->file('gambar');
+          // dd($gmbrSub);
+          $imgnm = preg_replace('/\s+/', '-', $request->bahasa).'.'.$gmbr->getClientOriginalExtension();
+          $gmbr->storeAs('public/images/bahasa',$imgnm);
+          $dbsldr = $imgnm;
+
+          $added = (new Bahasa())->addBahasa($request->bahasa,$dbsldr);
+          $request->session()->flash('alert-success', 'Task was successfull');
+
+      }else $request->session()->flash('alert-danger', 'Task failed');
+
+       return back();
+        // $dataBahasa = \DB::select('select nm_Materi as nama , id as id_materi from materi');
+    }
+
 }

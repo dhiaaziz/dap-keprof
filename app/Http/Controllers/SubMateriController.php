@@ -8,7 +8,7 @@ use App\SubMateri;
 use Image;
 
 class SubMateriController extends Controller
-{   
+{
     public function __construct()
     {
         $this->middleware('auth:admin');
