@@ -14,12 +14,24 @@
                 <label>Nama latihan</label>
                 <input type="text" class="form-control" id="nm_latihan" name="nm_latihan" placeholder="Nama latihan"  value="{{$data->nm_latihan}}" required/>
             </div>
-            
+            <div class="form-group">
+            <label>Bahasa</label>
+                <select name="id_bahasa" class="form-control" required>
+                    <option disabled>Pilih Bahasa</option>
+                    @foreach ($bahasa as $bahasa)
+                    <option value="{{$bahasa->id_bahasa}}">{{$bahasa->bahasa}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="form-group">
                 <label> Soal Latihan</label>
                 <textarea name="sl_latihan" class="form-control" id="sl_latihan"  value="{{$data->sl_latihan}}" required>{{htmlspecialchars($data->sl_latihan) }}</textarea>
             </div>
              <div class="form-group">
+                <label>Gambar</label>
+                <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1" required>
+            </div>
+            <div class="form-group">
                 <label>Gambar Source Code</label>
                 <input type="file" name="srcCode" class="form-control-file" id="exampleFormControlFile1" required>
             </div>

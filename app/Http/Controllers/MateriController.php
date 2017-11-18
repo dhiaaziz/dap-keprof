@@ -36,7 +36,7 @@ class MateriController extends Controller
             // $thumbnail = \Image::make($gamabr->getRealPath())->resize(200, 200);
             // $thumbnail->save($sldpath.'/'.$imgname, 80);
             $gambar->storeAs('public/images/materi',$imgname);
-            dd($request);
+            // dd($request);
             $dbsldr = $imgname;
 
             $added = (new Materi())->add($request->nm_Materi,$request->isi_Materi,$request->id_bahasa,$dbsldr);

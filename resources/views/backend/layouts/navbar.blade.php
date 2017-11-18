@@ -42,9 +42,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/bahasa">
-                        <i class="material-icons">spellcheck</i>
-                        <span>Bahasa</span>
+                    <a href="/user">
+                        <i class="material-icons">book</i>
+                        <span>User</span>
                     </a>
                 </li>
                 <li>
@@ -69,6 +69,12 @@
                     <a href="/forum">
                         <i class="material-icons">question_answer</i>
                         <span>Forum</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/bahasa">
+                        <i class="material-icons">question_answer</i>
+                        <span>Bahasa</span>
                     </a>
                 </li>
             </ul>

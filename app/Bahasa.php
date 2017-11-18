@@ -17,5 +17,5 @@ class Bahasa extends Model
                 ->insert(['bahasa'=> $bahasa , 'gambar' => $gambar]);
 
         return $add;
-
+      }
 }

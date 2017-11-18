@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
+use Mail;
+use App\Mail\verifyEmail;
 
 class RegisterController extends Controller
 {
@@ -27,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/verifikasiakun';
 
     /**
      * Create a new controller instance.
@@ -62,10 +67,50 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'verifyToken' => Str::random(40),
         ]);
+        $thisUser = User::findOrFail($user->id);
+        $this->send($thisUser);
+        return $user;
     }
+
+     // function for send email to user after registration
+     public function send($thisUser)
+     {
+         Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
+     }
+
+     // function fot update status user for login
+     public function sendEmailDone($email,$verifyToken)
+     {
+       $user = User::where(['email'=> $email , 'verifyToken' => $verifyToken])->first();
+       if ($user) {
+             User::where(['email'=> $email , 'verifyToken' => $verifyToken])->update(['status' => '1' ,'verifyToken'=>NULL 
+                 ]);
+             return view('frontend.home.index');
+       }
+       else {
+         return 'user not found';
+       }
+     }
+
+//override from RegistersUsers
+     public function register(Request $request)
+     {
+         $this->validator($request->all())->validate();
+ 
+         event(new Registered($user = $this->create($request->all())));
+         
+         return $this->registered($request, $user)
+                         ?: redirect($this->redirectPath());
+     }
+
+     public function verifikasi()
+     {
+         return view('backend.verifikasiAkun.verifikasiakun');
+     }
 }
