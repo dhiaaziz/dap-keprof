@@ -29,12 +29,13 @@
                             <td>{{ $bahasa->bahasa}}</td>
                             <td>
                                 <center>
+                                  <img src="{{ asset('storage/images/bahasa/'.$bahasa->gambar)}}" width="200px" height="140px" />
                                 </center>
                             </td>
                            <td>
                             <center>
-                                <a class="btn btn-xs default" href="#">Edit Materi</a>
-                                <a class="btn btn-xs red" href="#"
+                                <a class="btn btn-xs default" href="{{url('/editBahasa/'.$bahasa->id)}}">Edit Materi</a>
+                                <a class="btn btn-xs red" href="{{ url('/deleteBahasa/'.$bahasa->id)  }}"
                                     onclick="return confirm('Anda yakin akan menghapus ini?');">Hapus Materi</a>
                             </center>
                             </td>

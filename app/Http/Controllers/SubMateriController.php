@@ -16,7 +16,7 @@ class SubMateriController extends Controller
     public function indexSub()
     {
         // $data = SubMateri::all();
-        $data = \DB::select('select s.*, m.nm_Materi from subMateri s LEFT JOIN materi m ON s.id_materi = m.id');
+        $data = \DB::select('select s.*, m.nm_Materi from submateri s LEFT JOIN materi m ON s.id_materi = m.id');
         // dd($data);
         return view('backend.submateri.indexSub', compact('data'));
     }

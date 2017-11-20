@@ -9,11 +9,12 @@ use App\SubMateri;
 class SubMateriController extends Controller
 {
     //
-     public function index(){
-        $submateri = SubMateri::all();
-        return view("frontend.submateri.index", compact('submateri'));
+     public function tampilSub($id_materi){
+
+        $submateri = \DB::select('select * from submateri where id_materi = :id_materi', ['id_materi' => $id_materi]);
+        return view("frontend.submateri.tampil", compact('submateri'));
 
 
-         }
+       }
 
 }

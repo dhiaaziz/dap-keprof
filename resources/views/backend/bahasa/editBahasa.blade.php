@@ -8,11 +8,11 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <form role="form" method="POST" action="{{ url('/addBahasa') }}"  enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{ url('/updateBahasa/'.$databahasa->id) }}"  enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label>Nama Bahasa</label>
-                <input type="text" class="form-control" id="bahasa" name="bahasa" placeholder="Nama Materi" required/>
+                <input value="{{$databahasa->bahasa}}" type="text" class="form-control" id="bahasa" name="bahasa" placeholder="Nama Materi" required/>
             </div>
              <div class="form-group">
                 <label>Gambar Bahasa</label>
@@ -20,10 +20,10 @@
             </div>
             <div class="form-group">
                <label>Color</label><br>
-               <input class="jscolor" name="warna" value="ab2567" required>
-           </div>
+               <input class="jscolor" name="warna" value="{{$databahasa->warna}}">
+             </div>
             <hr>
-            <div>
+            <div >
                <input class="btn main-color-bg btn-lg" type="submit" value="Save">
             </div>
             </form>

@@ -37,13 +37,18 @@ Route::get('/addShowSub/delete/{id}', 'SubMateriController@deleteSubMateri');
 Route::get('/bahasa', 'BahasaController@index');
 Route::get('/addBahasa', 'BahasaController@addBahasaShow');
 Route::post('/addBahasa', 'BahasaController@addBahasa');
+Route::get('/editBahasa/{id}', 'BahasaController@editBahasa');
+Route::get('/deleteBahasa/{id}', 'BahasaController@deleteBahasa');
+Route::post('/updateBahasa/{id}', 'BahasaController@updateBahasa');
+
+
 //FrontEnd Materi
 Route::group(['prefix' => 'frontend'], function () {
         Route::get('materi', 'frontend\MateriController@index');
         Route::get('home','frontend\HomeController@index');
         Route::get('latihan','frontend\LatihanController@index');
         Route::get('forum','frontend\ForumController@index');
-        Route::get('submateri', 'frontend\SubMateriController@index');
+        Route::get('submateri/{id_materi}', 'frontend\SubMateriController@tampilSub');
 
     });
 
@@ -55,9 +60,6 @@ Route::post('/addLatihan', 'LatihanController@addLatihan');
 Route::get('/editLatihan/{id}', 'LatihanController@editLatihan');
 Route::post('/editLatihan/update', 'LatihanController@updateLatihan');
 Route::get('/addShowLatihan/delete/{id}', 'LatihanController@deleteLatihan');
-
-//bahasa
-Route::get('/bahasa', 'BahasaController@indexBahasa');
 
 //kelola user
 Route::get('/user' , 'UserController@indexUser');

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class SubMateri extends Model
 {
@@ -13,8 +14,10 @@ class SubMateri extends Model
     ];
 
     public function addedSub($nm_Sub,$isi_Sub,$gmbrSub,$id_materi){
+
+        $current_time = Carbon::now()->toDateTimeString();
         $add = \DB::table('submateri')
-        ->insert(['nm_Sub'=>$nm_Sub, 'isi_Sub'=> $isi_Sub, 'gmbr_Sub'=> $gmbrSub, 'id_materi'=> $id_materi]);
+        ->insert(['nm_Sub'=>$nm_Sub, 'isi_Sub'=> $isi_Sub, 'gmbr_Sub'=> $gmbrSub, 'id_materi'=> $id_materi,'created_at' => $current_time,'updated_at' => $current_time]);
 
         return $add;
 

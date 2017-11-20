@@ -13,14 +13,16 @@ class CreateBahasaTable extends Migration
      */
     public function up()
     {
-        
+
         Schema::create('bahasa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('bahasa');
             $table->string('gambar');
-            
+            $table->string('warna');
+            $table->timestamps();
+
         });
-        
+
     }
 
     /**
@@ -30,8 +32,8 @@ class CreateBahasaTable extends Migration
      */
     public function down()
     {
-        
+
         Schema::dropIfExists('bahasa');
-        
+
     }
 }

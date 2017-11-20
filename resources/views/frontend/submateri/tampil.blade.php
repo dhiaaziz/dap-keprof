@@ -46,7 +46,7 @@ Materi
         }
         .kotak img{
         	width: 100%;
-        	
+
         }
     </style>
 @endsection
@@ -75,7 +75,7 @@ Materi
                                 <!--Featured image-->
                                 <div class="view overlay hm-white-light z-depth-1-half">
                                     <div class="kotak">
-		                                <img src="{{ asset('storage/images/submateri/'.$submateri->gmbr_Sub) }}" class="{{ $submateri->gmbr_sub}}" alt="">
+		                                <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub) }}" alt="">
                                     </div>
                                     <div class="mask">
                                     </div>
@@ -86,9 +86,9 @@ Materi
                                 <br>
 
                                 <!--Product data-->
-                                
+
                                 <h2 class="h2-responsive mt-4">{{ $submateri->nm_Sub }}</h2>
-                                
+
                                 <hr>
                                 <p>{!! $submateri->isi_Sub !!}</p>
                                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius totam, officiis doloremque
@@ -100,7 +100,7 @@ Materi
 
                         </div>
                     </div>
-                
+
 
                </div>
                 <!--/.Main column-->

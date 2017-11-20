@@ -17,7 +17,7 @@
                             <th><center>Nama User</center></th>
                             <th><center>Email User</center></th>
                             <th><center>Status Aktivasi</center></th>
-                           
+
                         </thead>
                     </tr>
                     <tr>
@@ -27,10 +27,7 @@
                             <td><center> {{ $loop->iteration }}</center> </td>
                             <td>{{ $user->name}}</td>
                             <td>{{ $user->email }}</td>
-                            <td><?php if($user->status == 0) echo "Non Active"; else echo "Active";?
-                            
-                            amaretcelmartcelius
-                            `></td>
+                            <td><?php if($user->status == 0) echo "Non Active"; else echo "Active";?></td>
                             </tr>
                         @endforeach
                         </tbody>

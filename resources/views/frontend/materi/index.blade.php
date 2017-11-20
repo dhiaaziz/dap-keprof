@@ -11,7 +11,7 @@ Materi
 
         main {
             margin-top: 3rem;
-            background-color: #fafafa
+            /*background-color: #fafafa*/
         }
 
         main .card {
@@ -40,18 +40,38 @@ Materi
             color: #fff !important;
         }
         .test-image{
-            padding: 26px;
+            padding: 20px;
             height: 350px;
             vertical-align: middle;
             text-align: center;
             /*max-height: 20px;*/
-            display: inline-block; 
+            display: inline-block;
             /*border: 1px solid blue*/
         }
         .test-image img{
             /*max-height: 350px;*/
             height: 100%;
             margin: 0px auto;
+        }
+
+        .card-body{
+          text-align: center;
+          padding-top: 0px;
+        }
+        .card-body .btn{
+           display: inline-block;
+           margin: 0 auto;
+           /*background-color: #ffaffa*/
+        }
+        .tags{
+          text-align: right;
+
+        }
+        .tags span{
+          background-color: rgb(30, 26, 150);
+          padding: 5px;
+          border-radius: 10%;
+          color: #ffffff;
         }
 
     </style>
@@ -69,9 +89,9 @@ Materi
             <!--Page heading-->
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="h1-responsive">Bahasa Pemograman
+                    <h1 class="h1-responsive">Daftar Materi
                     </h1>
-                    <small class="text-muted">Belajar dasar algoritma dan pemrograman dengan bahasa yang kamu sukai :)</small>
+                    <!-- <small class="text-muted">Belajar dasar algoritma dan pemrograman dengan bahasa yang kamu sukai :)</small> -->
                 </div>
             </div>
             <!--/.Page heading-->
@@ -93,11 +113,14 @@ Materi
                         <!--Card content-->
                         <div class="card-body">
                             <!--Title-->
-                            <h4 class="card-title">{{ $materi->nm_Materi }}</h4>
+                            <div class="tags">
+                              <p>TAGS : <span style="background-color:#{{$materi->warna}}">{{ $materi->bahasa }}</span></p>
+                            </div>
+                            <h3 class="card-title">{{ $materi->nm_Materi }}</h3>
                             <!--Text-->
-                            {!! $materi->isi_Materi !!}
+                            <?php $i = str_limit($materi->isi_Materi,10); ?>
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                            <a href="/frontend/submateri" class="btn btn-primary">Pilih</a>
+                            <a href="{{url('/frontend/submateri/'.$materi->id)}}" class="btn btn-primary">Pilih</a>
                         </div>
 
                     </div>
