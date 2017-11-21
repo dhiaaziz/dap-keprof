@@ -11,7 +11,7 @@ Materi
 
         main {
             margin-top: 3rem;
-            background-color: #fafafa
+            /*background-color: #fafafa*/
         }
 
         main .card {
@@ -43,10 +43,16 @@ Materi
         	display: inline-block;
         	height: auto;
         	width: 100%;
+          padding: 5px;
         }
         .kotak img{
         	width: 100%;
-
+        }
+        .tags{
+          background-color: rgb(30, 26, 150);
+          padding: 5px;
+          border-radius: 10%;
+          color: #ffffff;
         }
     </style>
 @endsection
@@ -64,46 +70,90 @@ Materi
 
 
                 <!--Main column-->
-                <div class="col-lg-8">
-
-                    <!--First row-->
-                    <div class="row wow fadeIn" data-wow-delay="0.4s">
+                <div class="col-lg-9">
+                  <!-- CARD -->
+                  <!-- <div class="card">
+                    <div class="card-body"> -->
+                      <!--First row-->
+                      <div class="row wow fadeIn" data-wow-delay="0.4s">
                         <div class="col-md-12">
-                            <!--Product-->
-                            <div class="product-wrapper">
-                            	@foreach ($submateri as $submateri)
-                                <!--Featured image-->
-                                <div class="view overlay hm-white-light z-depth-1-half">
-                                    <div class="kotak">
-		                                <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub) }}" alt="">
-                                    </div>
-                                    <div class="mask">
-                                    </div>
-                                    <!-- <h3 class="price"><span class="badge red darken-2">10 $</span></h3> -->
-                                </div>
-                                <!--/.Featured image-->
-
-                                <br>
-
-                                <!--Product data-->
-
-                                <h2 class="h2-responsive mt-4">{{ $submateri->nm_Sub }}</h2>
-
-                                <hr>
-                                <p>{!! $submateri->isi_Sub !!}</p>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius totam, officiis doloremque
-                                    velit nobis dolor nulla unde architecto alias praesentium, soluta error omnis sint, impedit,
-                                    delectus ipsam eveniet debitis nemo.</p> -->
-                                 @endforeach
+                          <!--Product-->
+                          <div class="product-wrapper">
+                            <h1 class="h1-responsive font-bold mt-4">{{ $materi->nm_Materi }}</h1>
+                            <hr>
+                            <hr>
+                            <div class="view overlay hm-white-light z-depth-1-half">
+                              <div class="kotak">
+                                <img src="{{ asset('storage/images/materi/'.$materi->gambar) }}" alt="">
+                              </div>
+                              <div class="mask">
+                              </div>
+                              <!-- <h3 class="price"><span class="badge red darken-2">10 $</span></h3> -->
                             </div>
-                            <!--Product-->
+                            <!--/.Featured image-->
+                            <br>
+                            <!--Product data-->
+                            <p>{!! $materi->isi_Materi !!}</p>
 
+                            @foreach ($submateri as $submateri)
+                            <!--Featured image-->
+                            <div class="view overlay hm-white-light z-depth-1-half">
+                              <div class="kotak">
+                                <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub) }}" alt="">
+                              </div>
+                              <div class="mask">
+                              </div>
+                              <!-- <h3 class="price"><span class="badge red darken-2">10 $</span></h3> -->
+                            </div>
+                            <!--/.Featured image-->
+
+                            <br>
+
+                            <!--Product data-->
+
+                            <h3 class="h3-responsive font-bold mt-4">{{ $submateri->nm_Sub }}</h3>
+                            <p>{!! $submateri->isi_Sub !!}</p>
+                            @endforeach
+                          </div>
+                          <!--Product-->
                         </div>
-                    </div>
+                      </div>
 
+                    <!-- </div>
+                  </div> -->
+                  <!--/.Card  -->
 
                </div>
                 <!--/.Main column-->
+                <!--Sidebar-->
+                <div class="col-lg-3">
+
+                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
+                        <h5 class="font-bold">Daftar pertanyaan <span style="background-color:#{{$materi->warna}}"class="tags">{{ $materi->bahasa }}</span> lainnya:</h5>
+                        <br>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">Lifestyle</a>
+                            <a href="#" class="list-group-item">Music</a>
+                            <a href="#" class="list-group-item">Travels</a>
+                            <a href="#" class="list-group-item">Fashion</a>
+                            <a href="#" class="list-group-item">Parties</a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
+                        <h5 class="font-bold">Daftar latihan dalam <span style="background-color:#{{$materi->warna}}"class="tags">{{ $materi->bahasa }}</span> :</h5>
+                        <br>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">Lifestyle</a>
+                            <a href="#" class="list-group-item">Music</a>
+                            <a href="#" class="list-group-item">Travels</a>
+                            <a href="#" class="list-group-item">Fashion</a>
+                            <a href="#" class="list-group-item">Parties</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/.Sidebar-->
 
             </div>
         </div>
