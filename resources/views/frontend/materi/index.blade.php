@@ -40,8 +40,8 @@ Materi
             color: #fff !important;
         }
         .test-image{
-            padding: 20px;
-            height: 350px;
+            padding: 10px;
+            height: 250px;
             vertical-align: middle;
             text-align: center;
             /*max-height: 20px;*/
@@ -73,7 +73,10 @@ Materi
           border-radius: 10%;
           color: #ffffff;
         }
-
+        .pilih-bahasa p{
+          display: inline;
+          margin-right: 15px;
+        }
     </style>
 @endsection
 
@@ -92,6 +95,19 @@ Materi
                     <h1 class="h1-responsive">Daftar Materi
                     </h1>
                     <!-- <small class="text-muted">Belajar dasar algoritma dan pemrograman dengan bahasa yang kamu sukai :)</small> -->
+                    <div class="pilih-bahasa">
+                      <p>Filter Bahasa</p>
+                      <select class="mdb-select">
+                        <option value="" disabled selected>All</option>
+                        @foreach
+                        
+                        @endforeach
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                      </select>
+                    </div>
+
                 </div>
             </div>
             <!--/.Page heading-->
@@ -137,27 +153,9 @@ Materi
 
             <!--Pagination-->
             <nav class="row flex-center wow fadeIn" data-wow-delay="0.2s">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#!" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#!">1 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">5</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#!" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
+                @if($Materi->hasPages())
+                {{ $Materi->links() }}
+                @endif
             </nav>
             <!--/.Pagination-->
         </div>

@@ -1,7 +1,7 @@
 @extends ('frontend.layouts.master')
 
 @section('title')
-Materi
+Latihan
 @endsection
 
 @section('more-style')
@@ -41,19 +41,21 @@ Materi
         }
         .kotak{
         	display: inline-block;
-        	height: auto;
-        	width: 100%;
+          width: 100%;
           padding: 5px;
         }
         .kotak img{
-        	width: 100%;
+          display: block;
+          margin: 0px auto;
+        	/*height: 100%;*/
+          width: 100%;
         }
         .tags{
           background-color: rgb(30, 26, 150);
           padding: 3px;
           border-radius: 10%;
-          color: #ffffff;
           font-size: 0.75em;
+          color: #ffffff;
         }
     </style>
 @endsection
@@ -80,12 +82,12 @@ Materi
                         <div class="col-md-12">
                           <!--Product-->
                           <div class="product-wrapper">
-                            <h1 class="h1-responsive font-bold mt-4">{{ $materi->nm_Materi }}</h1>
+                            <h1 class="h1-responsive font-bold mt-4">{{ $latihan->nm_latihan }}</h1>
                             <hr>
                             <hr>
                             <div class="view overlay hm-white-light z-depth-1-half">
                               <div class="kotak">
-                                <img src="{{ asset('storage/images/materi/'.$materi->gambar) }}" alt="">
+                                <img src="{{ asset('storage/images/latihan/'.$latihan->gambar) }}" alt="">
                               </div>
                               <div class="mask">
                               </div>
@@ -94,27 +96,9 @@ Materi
                             <!--/.Featured image-->
                             <br>
                             <!--Product data-->
-                            <p>{!! $materi->isi_Materi !!}</p>
+                            <p>{!! $latihan->sl_latihan !!}</p>
 
-                            @foreach ($submateri as $submateri)
-                            <!--Featured image-->
-                            <div class="view overlay hm-white-light z-depth-1-half">
-                              <div class="kotak">
-                                <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub) }}" alt="">
-                              </div>
-                              <div class="mask">
-                              </div>
-                              <!-- <h3 class="price"><span class="badge red darken-2">10 $</span></h3> -->
-                            </div>
-                            <!--/.Featured image-->
 
-                            <br>
-
-                            <!--Product data-->
-
-                            <h3 class="h3-responsive font-bold mt-4">{{ $submateri->nm_Sub }}</h3>
-                            <p>{!! $submateri->isi_Sub !!}</p>
-                            @endforeach
                           </div>
                           <!--Product-->
                         </div>
@@ -130,7 +114,7 @@ Materi
                 <div class="col-lg-3">
 
                     <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="font-bold">Daftar pertanyaan <span style="background-color:#{{$materi->warna}}"class="tags">{{ $materi->bahasa }}</span> lainnya:</h5>
+                        <h5 class="font-bold">Daftar pertanyaan <span style="background-color:#{{$latihan->warna}}"class="tags">{{ $latihan->bahasa }}</span> lainnya:</h5>
                         <br>
                         <div class="list-group">
                             <a href="#" class="list-group-item active">Lifestyle</a>
@@ -142,7 +126,7 @@ Materi
                     </div>
                     <br>
                     <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="font-bold">Daftar latihan dalam <span style="background-color:#{{$materi->warna}}"class="tags">{{ $materi->bahasa }}</span> :</h5>
+                        <h5 class="font-bold">Daftar latihan dalam <span style="background-color:#{{$latihan->warna}}"class="tags">{{ $latihan->bahasa }}</span> :</h5>
                         <br>
                         <div class="list-group">
                             <a href="#" class="list-group-item active">Lifestyle</a>
@@ -171,7 +155,7 @@ Materi
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#nav-materi").addClass("active");
+            $("#nav-latihan").addClass("active");
             $(".card-body > p").addClass("card-text");
         })
     </script>
