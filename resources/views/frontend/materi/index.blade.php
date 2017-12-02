@@ -99,9 +99,7 @@ Materi
                       <p>Filter Bahasa</p>
                       <select class="mdb-select">
                         <option value="" disabled selected>All</option>
-                        @foreach
-                        
-                        @endforeach
+                    
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>

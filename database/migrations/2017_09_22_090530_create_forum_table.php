@@ -16,9 +16,11 @@ class CreateForumTable extends Migration
         Schema::create('forum', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user');
+            $table->string('judul_forum');
+            $table->longText('isi_forum');
             $table->string('kategori');
             $table->timestamps();
-            
+
         });
     }
 

@@ -17,10 +17,10 @@
                             <a class="nav-link" href="{{ url('frontend/latihan') }}">Latihan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Forum</a>
+                            <a class="nav-link" href="{{ url('frontend/forum') }}">Forum</a>
                         </li>
                         <!-- <li class="nav-item btn-group">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown 
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
                             </a>
                             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">Action</a>
@@ -43,7 +43,7 @@
                                  <a class="nav-link" href="login"></a>
                              </li> -->
                              <li class="nav-item btn-group">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}} 
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
                             </a>
                             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href=""

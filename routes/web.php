@@ -48,6 +48,10 @@ Route::group(['prefix' => 'frontend'], function () {
         Route::get('home','frontend\HomeController@index');
         Route::get('latihan','frontend\LatihanController@index');
         Route::get('forum','frontend\ForumController@index');
+        Route::get('forum/tampil','frontend\ForumController@tampil');
+        Route::get('forum/tanya','frontend\ForumController@tanya');
+        Route::post('/forum/addTanya', 'frontend\ForumController@storePertanyaan');
+        Route::get('forum/bagi','frontend\ForumController@bagi');
         Route::get('submateri/{id_materi}', 'frontend\SubMateriController@tampilSub');
         Route::get('latihantampil/{id_materi}', 'frontend\LatihanController@tamplilLatihan');
 

@@ -14,7 +14,7 @@
                 <label>Nama Materi</label>
                 <input type="text" class="form-control" id="nm_Materi" name="nm_Materi" placeholder="Nama Materi" required/>
             </div>
-            
+
             <div class="form-group">
                 <label> Isi Materi</label>
                 <textarea name="isi_Materi" class="form-control" id="isi_Materi" rows="3" required></textarea>
@@ -30,7 +30,7 @@
                         @foreach($databahasa as $bahasa)
                     <option value="{{ $bahasa->id_bahasa }}">{{ $bahasa->bahasa }}</option>
                          @endforeach
-                </select>   
+                </select>
             </div>
             <hr>
             <div >
