@@ -40,11 +40,11 @@ Forum
           }
 
           .navbar {
-              background-color: #676b74;
+              background-color: #1C2331;
           }
 
           footer.page-footer {
-              background-color: #676b74;
+              background-color: #1C2331;
               margin-top: 2rem;
           }
           .card {
@@ -93,19 +93,21 @@ Forum
                             <!--Product data-->
                             <h2 class="h2-responsive mt-4">Isi Form Bagi</h2>
                             <br>
-                            <div class="md-form">
-                              <input type="text" id="form1" class="form-control" name="judul_forum">
-                              <label for="form1" class="">Judul</label>
-                            </div>
-                            <label for="">Materi yang ingin dibagikan</label>
-                            <div class="md-form">
-                              <textarea id="textarea-char-counter" name="isi_forum" class="md-textarea"></textarea>
-                            </div>
-                            <input type="text" id="form1" class="form-control" value="bagi" name="kategori" hidden>
-                            <input type="text" id="form1" class="form-control" value="{{Auth::user()->id}}" name="id_user" hidden>
+                            <form role="form" method="POST" action="{{ url('/frontend/forum/addTanya') }}">
+                              {{ csrf_field() }}
+                                <div class="md-form">
+                                <input type="text" id="form1" class="form-control" name="judul_forum" required>
+                                <label for="form1" class="">Judul</label>
+                                </div>
+                                <label for="">Materi yang ingin dibagikan</label>
+                                <div class="md-form">
+                                <textarea id="textarea-char-counter" name="isi_forum" class="md-textarea" ></textarea></textarea>
+                                </div>
+                                <input type="text" id="form1" class="form-control" value="bagi" name="kategori" hidden>
+                                <input type="text" id="form1" class="form-control" value="{{Auth::user()->id}}" name="id_user" hidden>
 
-                            <!--Yellow-->
-                            <button type="button" type="submit" class="btn btn-cyan">Bagikan</button>
+                                <!--Yellow-->
+                                <input class="btn btn-cyan" type="submit" value="Sumbit">
                               <!-- <
                             <hr>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius totam, officiis doloremque
@@ -116,7 +118,7 @@ Forum
                                 delectus ipsam eveniet debitis nemo.</p>
                         </div>
                         <!--Product-->
-
+                            </form>
                     </div>
                 </div>
                 <!--/.First row-->
@@ -147,5 +149,12 @@ Forum
     <script src="https://cdn.ckeditor.com/4.7.1/basic/ckeditor.js" type="text/javascript"></script>
     <script>
         CKEDITOR.replace( 'textarea-char-counter' );
+       $("form").submit( function(e) {
+            var messageLength = CKEDITOR.instances['textarea-char-counter'].getData().replace(/<[^>]*>/gi, '').length;
+            if( !messageLength ) {
+                alert( 'Please enter a message' );
+                e.preventDefault();
+            }
+        });
     </script>
 @endsection

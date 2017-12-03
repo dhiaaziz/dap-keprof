@@ -47,8 +47,8 @@ Latihan
         .kotak img{
           display: block;
           margin: 0px auto;
-        	/*height: 100%;*/
-          width: 100%;
+          height: 50%;
+          width: 50%;
         }
         .tags{
           background-color: rgb(30, 26, 150);
@@ -56,6 +56,10 @@ Latihan
           border-radius: 10%;
           font-size: 0.75em;
           color: #ffffff;
+        }
+        .hide{
+            display :none;
+
         }
     </style>
 @endsection
@@ -73,7 +77,7 @@ Latihan
 
 
                 <!--Main column-->
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                   <!-- CARD -->
                   <!-- <div class="card">
                     <div class="card-body"> -->
@@ -84,8 +88,7 @@ Latihan
                           <div class="product-wrapper">
                             <h1 class="h1-responsive font-bold mt-4">{{ $latihan->nm_latihan }}</h1>
                             <hr>
-                            <hr>
-                            <div class="view overlay hm-white-light z-depth-1-half">
+                            <div class="">
                               <div class="kotak">
                                 <img src="{{ asset('storage/images/latihan/'.$latihan->gambar) }}" alt="">
                               </div>
@@ -97,9 +100,12 @@ Latihan
                             <br>
                             <!--Product data-->
                             <p>{!! $latihan->sl_latihan !!}</p>
-
-
-                          </div>
+                            <button class="btn btn-default btn-lg" rel="nofollow" id="jawaban">Lihat Jawaban</button>
+                            <div class="kotak hide" >
+                                <hr>
+                                <img src="{{ asset('storage/images/latihan/'.$latihan->srcCode)}}" alt="Source Code">
+                            </div>
+                       </div>
                           <!--Product-->
                         </div>
                       </div>
@@ -111,33 +117,6 @@ Latihan
                </div>
                 <!--/.Main column-->
                 <!--Sidebar-->
-                <div class="col-lg-3">
-
-                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="font-bold">Daftar pertanyaan <span style="background-color:#{{$latihan->warna}}"class="tags">{{ $latihan->bahasa }}</span> lainnya:</h5>
-                        <br>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">Lifestyle</a>
-                            <a href="#" class="list-group-item">Music</a>
-                            <a href="#" class="list-group-item">Travels</a>
-                            <a href="#" class="list-group-item">Fashion</a>
-                            <a href="#" class="list-group-item">Parties</a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="font-bold">Daftar latihan dalam <span style="background-color:#{{$latihan->warna}}"class="tags">{{ $latihan->bahasa }}</span> :</h5>
-                        <br>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">Lifestyle</a>
-                            <a href="#" class="list-group-item">Music</a>
-                            <a href="#" class="list-group-item">Travels</a>
-                            <a href="#" class="list-group-item">Fashion</a>
-                            <a href="#" class="list-group-item">Parties</a>
-                        </div>
-                    </div>
-
-                </div>
                 <!--/.Sidebar-->
 
             </div>
@@ -158,6 +137,14 @@ Latihan
             $("#nav-latihan").addClass("active");
             $(".card-body > p").addClass("card-text");
         })
+    </script>
+
+    <script >
+        $(document).ready( function(e){
+            $("#jawaban").on("click", function(){
+                <?php if(Auth::user() ) echo '$("div.kotak").removeClass("hide");';  else echo 'alert("Silahkan Login Terlebih Dahulu")' ;?> ;
+            });
+        });
     </script>
 
 @endsection

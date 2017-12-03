@@ -124,8 +124,8 @@ TheArgorithm
                                 <p>Daftar untuk mendapatan akses penuh</p>
                             </li>
                             <li>
-                                <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg" rel="nofollow">Daftar</a>
-                                <!-- <a target="_blank" href="https://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg" rel="nofollow">Learn more</a> -->
+                                <a target="_blank" href="/login" class="btn btn-primary btn-lg" rel="nofollow" style= "display: <?php if (Auth::user()) echo 'none'; ?> ">Daftar</a>
+                                <!-- <a target="_blank" href="/login" class="btn btn-default btn-lg" rel="nofollow">Learn more</a> -->
                             </li>
                         </ul>
                     </div>
@@ -156,7 +156,7 @@ TheArgorithm
                                 <p>Tidak ada kata terlambat untuk belajar</p>
                             </li>
                             <li>
-                                <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg" rel="nofollow">Mulai Latihan</a>
+                                <a target="_blank" href="/frontend/latihan" class="btn btn-primary btn-lg" rel="nofollow">Mulai Latihan</a>
                             </li>
                         </ul>
                     </div>
@@ -186,7 +186,7 @@ TheArgorithm
                                 <p>Komunitas kami dapat membantu anda dengan pertanyaan apapun</p>
                             </li>
                             <li>
-                                <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg" rel="nofollow">Mulai Forum</a>
+                                <a target="_blank" href="/frontend/forum" class="btn btn-default btn-lg" rel="nofollow">Mulai Forum</a>
                             </li>
                         </ul>
                     </div>

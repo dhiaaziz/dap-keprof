@@ -41,10 +41,11 @@ Latihan
         }
         .hehe img{
           display: block;
-          height: 100%;
+           height: 50%;
+          width: 50%;
           margin: 0 auto;
           /*vertical-align: middle;*/
-          /*width: 100%;*/
+          
         }
         .hehe{
           height: 350px;
@@ -89,7 +90,7 @@ Latihan
             <div class="row mt-5 wow fadeIn" data-wow-delay="0.2s">
                 <!--Featured image-->
                 <div class="col-lg-7">
-                    <div class="view overlay hm-white-light z-depth-1-half hehe">
+                    <div class="hehe">
                         <img src="{{ asset('storage/images/latihan/'.$lat->gambar) }}" class="img-fluid" alt="">
                         <div class="mask"></div>
                     </div>

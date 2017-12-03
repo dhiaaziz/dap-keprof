@@ -95,7 +95,7 @@ Materi
                     <h1 class="h1-responsive">Daftar Materi
                     </h1>
                     <!-- <small class="text-muted">Belajar dasar algoritma dan pemrograman dengan bahasa yang kamu sukai :)</small> -->
-                    <div class="pilih-bahasa">
+                    {{--  <div class="pilih-bahasa">
                       <p>Filter Bahasa</p>
                       <select class="mdb-select">
                         <option value="" disabled selected>All</option>
@@ -104,7 +104,7 @@ Materi
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
                       </select>
-                    </div>
+                    </div>  --}}
 
                 </div>
             </div>

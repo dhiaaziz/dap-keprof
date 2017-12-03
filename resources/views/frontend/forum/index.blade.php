@@ -135,23 +135,23 @@ Forum
                 @foreach($forums as $forum)
                 <div class="col-lg-4">
                     <!--Card-->
-                    <div class="card wow fadeIn" data-wow-delay="0.2s">
+                    <div class="card wow fadeIn" style="width: 22rem; margin : auto;" data-wow-delay="0.2s">
 
 
                         <!--Card content-->
                         <div class="card-body">
                             <!--Title-->
                             <div class="tags">
-                              <p><span style="background-color:#000">Tanya</span></p>
+                              <p><span style="background-color:#000">{{$forum->kategori}}</span></p>
                             </div>
                             <h4 class="card-title">{{ $forum->judul_forum }} </h4>
                             <div class="keterangan">
-                              <p class="card-text ">oleh      : <span>nama</span></p>
-                              <p class="card-text">pada :<span> tanggal</span></p>
+                              <p class="card-text ">oleh      : <span>{{$forum->name}}</span></p>
+                              <p class="card-text">pada       :<span> {{$forum->created_at}}</span></p>
                             </div>
                             <!--Text-->
                             <p class="card-text comments-count"><i class="fa fa-commenting-o" aria-hidden="true"></i> 0 Comment</p>
-                            <a href="/frontend/forum/tampil" class="btn btn-primary btn-tengah">MASUK</a>
+                            <a href="{{url('/frontend/forum/tampil/'.$forum->id)}}" class="btn btn-primary btn-tengah">MASUK</a>
                         </div>
 
                     </div>

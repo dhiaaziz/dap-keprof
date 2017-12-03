@@ -40,11 +40,11 @@ Forum
           }
 
           .navbar {
-              background-color: #676b74;
+              background-color: #1C2331;
           }
 
           footer.page-footer {
-              background-color: #676b74;
+              background-color: #1C2331;
               margin-top: 2rem;
           }
           .card {
@@ -59,6 +59,7 @@ Forum
           .tanggal{
             color: #FBC02D!important;
           }
+          
 
     </style>
 @endsection
@@ -68,8 +69,7 @@ Forum
 @endsection
 
 @section('content')
-<<main>
-
+<main>
     <!--Main layout-->
     <div class="container">
         <div class="row">
@@ -96,17 +96,17 @@ Forum
                             <form role="form" method="POST" action="{{ url('/frontend/forum/addTanya') }}">
                               {{ csrf_field() }}
                               <div class="md-form">
-                                <input name="judul_forum" type="text" id="form1" class="form-control">
+                                <input name="judul_forum" type="text" id="form1" class="form-control" required>
                                 <label for="form1" class="">Judul</label>
                               </div>
                               <label for="">Pertanyaan</label>
                               <div class="md-form">
-                                <textarea  name="isi_forum"id="textarea-char-counter" class="md-textarea" length="120"></textarea>
+                                <textarea  name="isi_forum"id="textarea-char-counter" class="md-textarea" length="120" required></textarea>
                               </div>
                               <input type="text" id="form1" class="form-control" value="pertanyaan" name="kategori" hidden>
                               <input type="text" id="form1" class="form-control" value="{{Auth::user()->id}}" name="id_user" hidden>
                               <!--Yellow-->
-                              <input class="btn main-color-bg btn-lg" type="submit" value="Tanya">
+                               <input class=" btn btn-cyan" type="submit" value="Sumbit">
                                 <!-- <
                               <hr>
                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius totam, officiis doloremque
@@ -149,5 +149,12 @@ Forum
     <script src="https://cdn.ckeditor.com/4.7.1/basic/ckeditor.js" type="text/javascript"></script>
     <script>
         CKEDITOR.replace( 'textarea-char-counter' );
+        $("form").submit( function(e) {
+            var messageLength = CKEDITOR.instances['textarea-char-counter'].getData().replace(/<[^>]*>/gi, '').length;
+            if( !messageLength ) {
+                alert( 'Please enter a message' );
+                e.preventDefault();
+            }
+        });
     </script>
 @endsection

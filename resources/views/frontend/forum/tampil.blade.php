@@ -40,11 +40,11 @@ Forum
           }
 
           .navbar {
-              background-color: #676b74;
+              background-color: #1C2331;
           }
 
           footer.page-footer {
-              background-color: #676b74;
+              background-color:  #1C2331;
               margin-top: 2rem;
           }
           .card {
@@ -68,74 +68,80 @@ Forum
 @endsection
 
 @section('content')
-<<main>
+<main>
 
-    <!--Main layout-->
-    <div class="container">
-        <div class="row">
+        <!--Main layout-->
+        <div class="container">
+            <div class="row">
 
-            <!--Sidebar-->
-            <div class="col-lg-2 wow fadeIn" data-wow-delay="0.2s">
 
-            </div>
-            <!--/.Sidebar-->
-
-            <!--Main column-->
-            <div class="col-lg-8">
-
-                <!--First row-->
-                <div class="row wow fadeIn" data-wow-delay="0.4s">
-                    <div class="col-md-12">
-                        <!--Product-->
-                        <div class="product-wrapper">
-                            <br>
-
-                            <!--Product data-->
-                            <h2 class="h2-responsive mt-4">Product title</h2>
+                <!--Main column-->
+                <div class="col-lg-12">
+                  <!-- CARD -->
+                  <!-- <div class="card">
+                    <div class="card-body"> -->
+                      <!--First row-->
+                      <div class="row wow fadeIn" data-wow-delay="0.4s">
+                        <div class="col-md-12">
+                          <!--Product-->
+                          <div class="product-wrapper">
+                          @foreach ($forum as $forums)
+                            <h6> Kategori :{{$forums->kategori}}</h6>
+                            <h1 class="h1-responsive font-bold mt-4">{{$forums->judul_forum}}</h1>
                             <hr>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius totam, officiis doloremque
-                                velit nobis dolor nulla unde architecto alias praesentium, soluta error omnis sint, impedit,
-                                delectus ipsam eveniet debitis nemo.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius totam, officiis doloremque
-                                velit nobis dolor nulla unde architecto alias praesentium, soluta error omnis sint, impedit,
-                                delectus ipsam eveniet debitis nemo.</p>
+                                            <!--/.Featured image-->
+                            <!--Product data-->
+                            <p>{!! $forums->isi_forum !!}</p>
+                            @endforeach
+                            <br>
+                            <!--Product data-->
+                            <h3 class="h3-responsive font-bold mt-4">Komentar</h3>
+                            <hr>
+                            <br>
+                        
+                            @foreach ($dataKomentar as $komentar)
+                            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                                <div class="col-md-12">
+                                    <div class="jumbotron">
+                                        <p>{!! $komentar->jawaban !!}</p>
+                                        <hr>
+                                        <h5 style= "text-align: right;"> {{$komentar->name}}</h5>
+                                        <p style= "text-align: right;"></p>{{$komentar->created_at}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            @endforeach
+                           
+                          </div>
+                          <!--Product-->
                         </div>
-                        <!--Product-->
+                      </div>
 
-                    </div>
-                </div>
-                <!--/.First row-->
+                    <!-- </div>
+                  </div> -->
+                  <!--/.Card  -->
 
-                <!--Second row-->
-                <div class="row">
-
-                    <!--Heading-->
-                    <div class="col reviews wow fadeIn" data-wow-delay="0.4s">
-                        <h2 class="h2-responsive">Komentar</h2>
-                    </div>
-
-                    <!--First review-->
-                    <div class="media wow fadeIn" data-wow-delay="0.2s">
-                        <div class="media-body ml-4">
-                            <h4 class="media-heading">John Doe</h4>
-                            <p class="tanggal">Tanggal nya euy</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure
-                                soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda.
-                                Earum sit id ullam eum vel delectus!</p>
-                        </div>
-                    </div>
-
-                    <br>
-
-                </div>
-                <!--/.Second row-->
+               </div>
+                <!--/.Main column-->
+                <!--Sidebar-->
+               
+                <!--/.Sidebar-->
 
             </div>
-            <!--/.Main column-->
+            <form role="form" method="POST" action="{{ url('/frontend/forum/addKomentar') }}">
+                    {{ csrf_field() }}
+                    <div class="md-form">
+                    <textarea id="textarea-char-counter" name="jawaban" class="md-textarea"></textarea>
+                    </div>
+                     <input type="text" id="form1" class="form-control" value="{{$forums->id}}" name="id_forum" hidden>  
+                     <input type="text" id="form1" class="form-control" value="{{Auth::user()->id}}" name="id_user" hidden>  
 
+                    <input class="btn btn-cyan" type="submit" value="Sumbit">
+                </form>
         </div>
-    </div>
-    <!--/.Main layout-->
+        
+        <!--/.Main layout-->
 
 </main>
 
@@ -151,6 +157,17 @@ Forum
             $("#nav-forum").addClass("active");
             $(".card-body > p").addClass("card-text")
         })
+    </script>
+     <script src="https://cdn.ckeditor.com/4.7.1/basic/ckeditor.js" type="text/javascript"></script>
+    <script>
+        CKEDITOR.replace( 'textarea-char-counter' );
+         $("form").submit( function(e) {
+            var messageLength = CKEDITOR.instances['textarea-char-counter'].getData().replace(/<[^>]*>/gi, '').length;
+            if( !messageLength ) {
+                alert( 'Please enter a message' );
+                e.preventDefault();
+            }
+        });
     </script>
     
 @endsection

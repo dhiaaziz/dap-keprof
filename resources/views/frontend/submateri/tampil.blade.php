@@ -42,7 +42,7 @@ Materi
         .kotak{
         	display: inline-block;
         	height: auto;
-        	width: 100%;
+        	width: auto;
           padding: 5px;
         }
         .kotak img{
@@ -71,7 +71,7 @@ Materi
 
 
                 <!--Main column-->
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                   <!-- CARD -->
                   <!-- <div class="card">
                     <div class="card-body"> -->
@@ -84,9 +84,6 @@ Materi
                             <hr>
                             <hr>
                             <div class="view overlay hm-white-light z-depth-1-half">
-                              <div class="kotak">
-                                <img src="{{ asset('storage/images/materi/'.$materi->gambar) }}" alt="">
-                              </div>
                               <div class="mask">
                               </div>
                               <!-- <h3 class="price"><span class="badge red darken-2">10 $</span></h3> -->
@@ -95,13 +92,12 @@ Materi
                             <br>
                             <!--Product data-->
                             <p>{!! $materi->isi_Materi !!}</p>
-
+                            <div class="kotak">
+                                <img src="{{ asset('storage/images/materi/'.$materi->gambar) }}" alt="">
+                              </div>
                             @foreach ($submateri as $submateri)
                             <!--Featured image-->
                             <div class="view overlay hm-white-light z-depth-1-half">
-                              <div class="kotak">
-                                <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub) }}" alt="">
-                              </div>
                               <div class="mask">
                               </div>
                               <!-- <h3 class="price"><span class="badge red darken-2">10 $</span></h3> -->
@@ -114,6 +110,9 @@ Materi
 
                             <h3 class="h3-responsive font-bold mt-4">{{ $submateri->nm_Sub }}</h3>
                             <p>{!! $submateri->isi_Sub !!}</p>
+                            <div class="kotak">
+                                <img src="{{ asset('storage/images/SubMateri/'.$submateri->gmbr_Sub) }}" alt="">
+                              </div>
                             @endforeach
                           </div>
                           <!--Product-->
@@ -127,34 +126,7 @@ Materi
                </div>
                 <!--/.Main column-->
                 <!--Sidebar-->
-                <div class="col-lg-3">
-
-                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="font-bold">Daftar pertanyaan <span style="background-color:#{{$materi->warna}}"class="tags">{{ $materi->bahasa }}</span> lainnya:</h5>
-                        <br>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">Lifestyle</a>
-                            <a href="#" class="list-group-item">Music</a>
-                            <a href="#" class="list-group-item">Travels</a>
-                            <a href="#" class="list-group-item">Fashion</a>
-                            <a href="#" class="list-group-item">Parties</a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="font-bold">Daftar latihan dalam <span style="background-color:#{{$materi->warna}}"class="tags">{{ $materi->bahasa }}</span> :</h5>
-                        <br>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">Lifestyle</a>
-                            <a href="#" class="list-group-item">Music</a>
-                            <a href="#" class="list-group-item">Travels</a>
-                            <a href="#" class="list-group-item">Fashion</a>
-                            <a href="#" class="list-group-item">Parties</a>
-                        </div>
-                    </div>
-
-                </div>
-                <!--/.Sidebar-->
+               <!--/.Sidebar-->
 
             </div>
         </div>

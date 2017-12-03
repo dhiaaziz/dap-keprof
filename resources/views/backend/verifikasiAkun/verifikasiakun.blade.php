@@ -59,7 +59,7 @@ Verifikasi
             <!--/.Page heading-->
             <hr>
                <div class="card" style="width: 22rem; margin : auto;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <img class="card-img-top" src="..." alt="">
                         <div class="card-body">
                             <p class="card-text">Please check your email for verification account</p>
                         </div>
